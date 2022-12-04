@@ -10,11 +10,11 @@ const App = () => {
     return(
         <>
             <Menu />
-            <Routes>
-                <Route path='/' element={<NewsPage />} />
-                <Route path='/news' element={<NewsList />} />
-                <Route path='/news/:id' element={<NewsItem />} />
-                <Route path='/favourite' element={<Favourites />} />
+            <Routes basename="/NewsApp/">
+                <Route path='/NewsApp/' element={<NewsPage />} />
+                <Route path='/NewsApp/news' element={<NewsList />} />
+                <Route path='/NewsApp/news/:id' element={<NewsItem />} />
+                <Route path='/NewsApp/favourite' element={<Favourites />} />
             </Routes>
             <Footer />
         </>
