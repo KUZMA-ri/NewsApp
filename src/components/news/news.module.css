@@ -119,6 +119,11 @@
     margin-top: auto;
 }
 
+.news__categories {
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .news__categoriesName {
     padding: 6px 16px;
     background-color: var(--background-dark);
@@ -126,6 +131,7 @@
     width: fit-content;
     border-radius: 50px;
     margin-top: 10px;
+    margin-right: 5px;
 }
 
 /* ############################################################################################################# */

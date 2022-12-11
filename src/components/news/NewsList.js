@@ -139,7 +139,11 @@ const NewsList = () => {
                         : 'https://images.unsplash.com/photo-1584824388173-4df14ba64472?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mzd8fG5vdCUyMGZvdW5kfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60'} 
                     />
                 </div>
-                <p className={styles.news__categoriesName}>{news.category}</p>
+                <div className={styles.news__categories}>
+                    {news.category.map((item) => (
+                        <p className={styles.news__categoriesName}>{item}</p>
+                    ))}
+                </div>
                 <div className={styles.news__content}>
                 <Link className={styles.news__link}  to={`/news/${news.title}`}>
                     <h2 className={titleClass}>{news.title}</h2>
