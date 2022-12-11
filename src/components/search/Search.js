@@ -1,6 +1,7 @@
-import { filter } from "lodash";
 import { useDispatch } from "react-redux";
 import { SEARCH } from '../../redux/search/actions';
+import styles from './search.module.css';
+// ---------------------------------------------------------------------------------------------------------------------------------------------
 
 const Search = ({news}) => {
     const dispatch = useDispatch();
@@ -19,11 +20,13 @@ const Search = ({news}) => {
         }
     }
     return(
-        <div>
+        <div className={styles.search}>
             <input 
+            className={styles.search__input}
                 type='text'
                 placeholder='Search...'
                 name='search'
+                autoComplete="off"
                 onChange={searching}
             />
         </div>

@@ -1,0 +1,17 @@
+.favourites__main {
+    width: 100%;
+    padding: 15px 0;
+    min-height: calc(100vh - 150px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.favourites__main_night {
+    background-color:var(--background-darkGrey);
+    color: var(--text-light);
+}
+
+.container {
+    padding: 0 15px;
+}

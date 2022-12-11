@@ -1,13 +1,13 @@
 import NewsList from "../components/news/NewsList";
-import Categories from '../components/categories/Categories';
+import Slider from "../components/slider/Slider";
+
 
 const NewsPage = () => {
     return(
-        <>
-            <Categories />
-        {/* Здесь вставить слайдер */}
+        <div>
+            <Slider />
             <NewsList />  
-        </>
+        </div>
     )
 }
 

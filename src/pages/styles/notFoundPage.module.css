@@ -1,0 +1,60 @@
+.main {
+    width: 100%;
+    height: 100vh;
+    padding: 15px 0;
+    background-image: url('../../images/notFound.webp');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.main_night {
+    background-image: url('../../images/earth.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color:var(--background-darkGrey);
+    color: var(--text-light);
+}
+
+.container {
+    padding: 0 15px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.text {
+    font-size: 45px;
+    margin-bottom: 50px;
+}
+
+.text_night {
+    background-color:var(--background-darkGrey);
+    padding: 10px 0;
+}
+
+.linkToHome {
+    min-width: 130px;
+    height: 40px;
+    color: #fff;
+    padding: 5px 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    outline: none;
+    border: 2px solid #212529;
+    background: #212529;
+}
+.linkToHome:hover {
+    background: #fff;
+    color: black;
+}
+
+.linkToHome_night {
+    background-color: var(--background-lightGrey);
+    color: var(--text-dark);
+}
+
+

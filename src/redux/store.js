@@ -1,9 +1,10 @@
 import { useReducer } from "react";
 import { createStore, combineReducers, applyMiddleware } from 'redux';
+import { composeWithDevTools } from 'redux-devtools-extension';
 import thunk from 'redux-thunk';
 import newsReducer from './news/reducer';
-import { composeWithDevTools } from 'redux-devtools-extension';
 import searchReducer from "./search/reducer";
+import themeReducer from "./theme/reducer";
 
 const saveToLocalStorage = (state) => {
     try {
@@ -31,7 +32,8 @@ const composedEnhancer = composeWithDevTools(
 
 const reducers = combineReducers({
     news: newsReducer,
-    search: searchReducer,    
+    search: searchReducer,  
+    theme: themeReducer,  
 });
 
 const store = createStore(reducers, loadFromLocalStorage(), composedEnhancer);

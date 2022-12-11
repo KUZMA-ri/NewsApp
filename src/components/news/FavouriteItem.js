@@ -1,24 +1,59 @@
+import { useSelector } from "react-redux";
+
+import Swal from 'sweetalert2';
+import classNames from 'classnames';
+
+import { text } from '../../constants/constants';
+
+import styles from './news.module.css';
+// ---------------------------------------------------------------------------------------------------------------------------------------------
 
 const FavouriteItem = ({title, content, creator, pubDate, image_url, link, onClick}) => {
-    const text = `Sed pulvinar proin gravida hendrerit. Sit amet purus gravida quis blandit turpis. Duis convallis convallis tellus id interdum velit laoreet id. Vel quam elementum pulvinar etiam non quam. Faucibus purus in massa tempor. Faucibus in ornare quam viverra orci sagittis eu volutpat odio. Suspendisse ultrices gravida dictum fusce. Velit dignissim sodales ut eu sem. Quam vulputate dignissim suspendisse in est ante in nibh mauris. Nulla facilisi cras fermentum odio. Massa massa ultricies mi quis hendrerit dolor magna eget est. Semper feugiat nibh sed pulvinar proin gravida hendrerit lectus. Facilisis sed odio morbi quis commodo odio. Convallis aenean et tortor at risus. Fermentum et sollicitudin ac orci phasellus egestas.
-    Fermentum leo vel orci porta non pulvinar. Sollicitudin nibh sit amet commodo nulla facilisi nullam vehicula. Integer quis auctor elit sed vulputate mi sit amet. Nullam non nisi est sit amet. Habitasse platea dictumst quisque sagittis. Tempor id eu nisl nunc mi ipsum. Eget nulla facilisi etiam dignissim diam quis enim lobortis. Non blandit massa enim nec dui. Sem integer vitae justo eget magna fermentum iaculis. Nisi est sit amet facilisis magna. Nunc consequat interdum varius sit. Vel fringilla est ullamcorper eget nulla. Euismod quis viverra nibh cras pulvinar. Facilisi etiam dignissim diam quis. Viverra ipsum nunc aliquet bibendum enim facilisis gravida neque convallis. Auctor urna nunc id cursus metus aliquam eleifend mi. Phasellus faucibus scelerisque eleifend donec pretium vulputate sapien nec.
-    Sed odio morbi quis commodo odio aenean sed. Egestas congue quisque egestas diam in arcu cursus. Tortor aliquam nulla facilisi cras fermentum odio eu feugiat. A condimentum vitae sapien pellentesque habitant morbi tristique. Sagittis purus sit amet volutpat consequat mauris nunc congue. Fringilla urna porttitor rhoncus dolor purus. Cum sociis natoque penatibus et magnis. Odio aenean sed adipiscing diam donec adipiscing tristique risus. Lorem sed risus ultricies tristique. Viverra ipsum nunc aliquet bibendum. Ultricies integer quis auctor elit. Purus semper eget duis at tellus.
-    Ornare arcu dui vivamus arcu. Risus ultricies tristique nulla aliquet. Velit laoreet id donec ultrices tincidunt arcu non. Id diam vel quam elementum pulvinar. Turpis cursus in hac habitasse platea dictumst quisque sagittis. Turpis cursus in hac habitasse platea dictumst quisque sagittis purus. Nunc consequat interdum varius sit amet mattis. Sollicitudin nibh sit amet commodo nulla facilisi. Elit ullamcorper dignissim cras tincidunt lobortis. Facilisi cras fermentum odio eu feugiat pretium nibh ipsum. Erat velit scelerisque in dictum. Fermentum odio eu feugiat pretium nibh ipsum consequat nisl. Sem et tortor consequat id porta nibh venenatis cras. Sed lectus vestibulum mattis ullamcorper velit sed ullamcorper. Interdum varius sit amet mattis vulputate enim. Augue mauris augue neque gravida. Purus faucibus ornare suspendisse sed. Nisl rhoncus mattis rhoncus urna neque viverra. Gravida arcu ac tortor dignissim convallis aenean et tortor.`
+    const theme = useSelector((state) => state.theme.theme);
+
+    const itemMainClass = classNames(styles.item__main, {     
+        [styles.item__main_night]: theme === 'dark',     
+    });
+
+    const itemBtn = classNames(styles.item__btn, {     
+        [styles.item__btn_night]: theme === 'dark',     
+    });
 
     return(
-        <div>
-            <h1>{title}</h1>
-            <img 
-                src={image_url 
-                ? image_url 
-                : ('https://perimeterinstitute.ca/sites/default/files/styles/hero_banner_small_1440x502/public/2021-01/News.jpg?itok=5z1mrcsr' 
-                    || 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2vxvgj6LIZ9bFAOVi3o4edBkEo6iNzSlPrm5RcoeNywhTUq5YqUX16-qFBOJ6EpRaii4&usqp=CAU')}
-            />                    
-            <p>{content ? content : text}</p>
-            <h3>Author: {creator ? creator : 'No name'}</h3>
-            <p> PubDate:{pubDate ? pubDate : 'No date'}</p>
-            <a href={link}>Link: {link}</a>
-            <button onClick={() => onClick(title)}>Remove from favourites</button>
+        <div className={itemMainClass}>
+            <div className={styles.item__container}>
+                <h1 className={styles.item__title}>{title}</h1>
+                <img 
+                    className={styles.item__img}
+                    src={image_url 
+                    ? image_url 
+                    : ('https://perimeterinstitute.ca/sites/default/files/styles/hero_banner_small_1440x502/public/2021-01/News.jpg?itok=5z1mrcsr' 
+                        || 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2vxvgj6LIZ9bFAOVi3o4edBkEo6iNzSlPrm5RcoeNywhTUq5YqUX16-qFBOJ6EpRaii4&usqp=CAU')}
+                />                    
+                <p className={styles.item__content}>{content ? content : text}</p>
+                <div className={styles.item__info}>
+                    <h3 className={styles.item__author}>Author: {creator ? creator : 'No name'}</h3>
+                    <p className={styles.item__pubDate}> PubDate:{pubDate ? pubDate : 'No date'}</p>
+                </div>
+                <a className={styles.item__link} href={link}>Link: {link}</a>
+                <button 
+                    className={itemBtn} 
+                    onClick={() => {
+                        onClick(title)
+                        Swal.fire({
+                            position: 'top-end',
+                            width: '25em',
+                            background: '#000',
+                            color: '#fff',
+                            icon: 'error',
+                            title: 'News deleted from favourite',
+                            showConfirmButton: false,
+                            timer: 1500
+                        })                       
+                    }}>
+                        Remove from favourites
+                </button>
+            </div>
         </div>
     )
 }

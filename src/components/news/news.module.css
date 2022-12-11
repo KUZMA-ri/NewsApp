@@ -1,0 +1,202 @@
+.main {
+    background: var(--background-grey);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.main_night {
+    background-color:var(--background-darkGrey);
+}
+/* ############################################################################################################# */
+                                                /* Search & date*/
+/* ############################################################################################################# */
+.date {
+    font-size: large;
+    font-weight: bold;
+    text-align: center;
+    color: var(--text-dark);
+}
+
+.date_night {
+    color: var(--text-light);
+}
+
+.search__wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 15px;
+    background-color: var(--background-grey);
+}
+
+/* ############################################################################################################# */
+                                                /* NewsList */
+/* ############################################################################################################# */
+
+.news{
+    width: 100%;
+    max-width: 1200px;
+    padding: 15px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+.news__container {
+    width: calc(100% / 12 * 4 - 15px);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    margin: 10px 7px 10px 7px;
+    transition: all 0.3s;
+    background-color: var(--background-lightGrey);
+    box-shadow: 0px 5px 5px 2px rgb(34 60 80 / 10%);
+}
+
+.news__container:hover {
+    box-shadow: 6px 6px 10px 4px rgba(34, 60, 80, 0.2);
+}
+
+.news__container_night {
+    transition: all 0.3s;
+    background-color: var(--background-lightestGrey);
+}
+
+.news__container_night:hover {
+    box-shadow: -5px -5px 5px -5px rgba(255, 255, 255, 0.6) inset;
+}
+
+.news__link, 
+.news__link:hover,
+.news__link:active {
+    text-decoration: none;
+    color: var(--text-dark);
+}
+
+.news__containerImage{
+    display: inline-block;
+    overflow: hidden;
+    background-color: var(--overlayDark);
+}
+
+.news__containerImage:hover {
+    background-color: var(--overlayLight);
+}
+.news__img {
+    width: 100%;
+    height: 225px;
+    object-fit: cover;
+    transition: 1s;
+    display: block;
+}
+
+.news__img:hover {
+    transform: scale(1.2);
+}
+
+.news__content {
+    margin-top: 0 auto;
+}
+
+.news__title {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+
+.news__title_night {
+    color: var(--text-light);
+}
+
+.news__title:hover {
+    text-decoration: underline;
+}
+
+.news__pubdate {
+    color: var(--text-grey);
+    font-size: 0.9rem;
+    margin-top: auto;
+}
+
+.news__categoriesName {
+    padding: 6px 16px;
+    background-color: var(--background-dark);
+    color: var(--text-light);
+    width: fit-content;
+    border-radius: 50px;
+    margin-top: 10px;
+}
+
+/* ############################################################################################################# */
+                                                /* NewsItem */
+/* ############################################################################################################# */
+.item__main {
+    width: 100%;
+    padding: 15px 0;
+}
+
+.item__main_night {
+    background-color:var(--background-darkGrey);
+    color: var(--text-light);
+}
+
+.item__container {
+    max-width: 1200px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+.item__title {
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.item__img {
+    width: 100%;
+    max-height: 60vh;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+.item__content {
+    padding: 0 15px;
+    margin-bottom: 50px;
+}
+
+.item__info {
+    display: flex;
+    justify-content: space-between;
+}
+
+.item__author {
+    font-size: 20px;
+}
+
+.item__pubDate {
+    font-size: 16px;
+    color: var(--text-grey);
+}
+
+.item__link {
+    display: block;
+    text-decoration: none;
+    color: var(--text-dark);
+    margin-bottom: 30px;
+}
+
+.item__btn {
+    display: block;
+    padding: 15px 25px;
+    background-color: var(--background-dark);
+    color: var(--text-light);
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.item__btn_night {
+    background-color: var(--background-lightGrey);
+    color: var(--text-dark);
+}
