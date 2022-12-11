@@ -4,7 +4,8 @@ const initialState = {
     favouriteNews: [],
     currentPage: 0,
     fetching: true,
-    totalPages: 5
+    totalPages: 5,
+    category: ''
 }
 
 const newsReducer = (state = initialState, action) => {
@@ -12,6 +13,10 @@ const newsReducer = (state = initialState, action) => {
         case "GET_NEWS_SUCCESS":
             console.log('initial', action.payload);
             return {...state, news: [...action.payload]}
+        
+        case "GET_CATEGORIES":
+            console.log(action.payload);
+            return {...state, category: action.payload}
 
         // case "GET_MORE_NEWS":
         //     const newCurrentPage = ++state.currentPage;
@@ -20,7 +25,7 @@ const newsReducer = (state = initialState, action) => {
 
         case 'ADD_NEWS_TO_FAVOURITE': 
             const favourites = state.favouriteNews.filter(item => item.title !== action.payload.title);
-            return {favourite: true, favouriteNews: [...favourites, action.payload], news: state.news};   
+            return {...state, favourite: true, favouriteNews: [...favourites, action.payload], news: state.news};   
 
         case 'REMOVE_NEWS_TO_FAVOURITE':
             const filteredFavouritesNews = state.favouriteNews.filter(item => action.payload !== item.title);

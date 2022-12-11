@@ -1,10 +1,14 @@
 import { Link } from "react-router-dom";
 import { useEffect} from "react";
 import { useDispatch, useSelector } from "react-redux";
+
 import classNames from 'classnames';
-// import axios from "axios";
+import axios from "axios";
+
+import { GET_NEWS_SUCCESS } from "../../redux/news/actions";
 
 import {fetchNews} from '../../services/news';
+
 import Search from "../search/Search";
 import Loader from '../loader/Loader';
 
@@ -62,13 +66,23 @@ const NewsList = () => {
     const dispatch = useDispatch();
     const news = useSelector(state => state.news.news);
     const search = useSelector(state => state.search.search);
+    const category = useSelector(state => state.news.category);
     // const fetching = useSelector(state => state.news.fetching);              // для загрузки при скролле на redux
     // const currentPage = useSelector(state => state.news.currentPage);        // -//-//-
     // const totalPages = useSelector(state => state.news.totalPages);          // -//-//-
 
     useEffect(() => {
-        dispatch(fetchNews())
-    },[]);
+        if(category) {
+            axios.get(`${API}&category=${category}`)
+            .then((response) => {
+                const news = response.data.results;
+            dispatch(GET_NEWS_SUCCESS(news));
+            })
+        } else {
+            dispatch(fetchNews())
+        }
+        
+    },[category]);
 
     const theme = useSelector((state) => state.theme.theme);            // theme (day/night)
     const mainClass = classNames(styles.main, {     
@@ -125,7 +139,7 @@ const NewsList = () => {
                         : 'https://images.unsplash.com/photo-1584824388173-4df14ba64472?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mzd8fG5vdCUyMGZvdW5kfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60'} 
                     />
                 </div>
-                <p className={styles.news__categoriesName}>{news.category }</p>
+                <p className={styles.news__categoriesName}>{news.category}</p>
                 <div className={styles.news__content}>
                 <Link className={styles.news__link}  to={`/news/${news.title}`}>
                     <h2 className={titleClass}>{news.title}</h2>

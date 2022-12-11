@@ -1,8 +1,11 @@
+import React from 'react';
 import { Link } from 'react-router-dom';
 
 import { useDispatch, useSelector } from 'react-redux';
 
 import { changeTheme } from '../../redux/theme/actions';
+
+import { GET_CATEGORIES } from '../../redux/news/actions';
 
 import CustomizedSwitches from '../switcher/SwitherTheme';
 
@@ -31,19 +34,20 @@ const Menu = () => {
                         </li>
                         <Link to={'/NewsApp'}><li className={styles.header__link}>Home</li></Link>
                         <li className={styles.header__link}>Categories
-                            <ul className={styles.categories__list}>
-                                <li className={styles.categories__link}>Business</li>
-                                <li className={styles.categories__link}>Entertainment</li>
-                                <li className={styles.categories__link}>Environment</li>
-                                <li className={styles.categories__link}>Food</li>
-                                <li className={styles.categories__link}>Health</li>
-                                <li className={styles.categories__link}>Politics</li>
-                                <li className={styles.categories__link}>Science</li>
-                                <li className={styles.categories__link}>Sports</li>
-                                <li className={styles.categories__link}>Technology</li>
-                                <li className={styles.categories__link}>Top</li>
-                                <li className={styles.categories__link}>World</li>
-                            </ul>
+                                <ul className={styles.categories__list} >
+                                <Link to={'/NewsApp'}><li className={styles.categories__link} onClick={(e) => dispatch(GET_CATEGORIES(''))}>All</li></Link>    
+                                <Link to={'/NewsApp'}><li className={styles.categories__link} onClick={(e) => dispatch(GET_CATEGORIES(e.target.textContent.toLowerCase()))}>Business</li></Link>
+                                <Link to={'/NewsApp'}><li className={styles.categories__link} onClick={(e) => dispatch(GET_CATEGORIES(e.target.textContent.toLowerCase()))}>Entertainment</li></Link>  
+                                <Link to={'/NewsApp'}><li className={styles.categories__link} onClick={(e) => dispatch(GET_CATEGORIES(e.target.textContent.toLowerCase()))}>Environment</li></Link>
+                                <Link to={'/NewsApp'}><li className={styles.categories__link} onClick={(e) => dispatch(GET_CATEGORIES(e.target.textContent.toLowerCase()))}>Food</li></Link>
+                                <Link to={'/NewsApp'}><li className={styles.categories__link} onClick={(e) => dispatch(GET_CATEGORIES(e.target.textContent.toLowerCase()))}>Health</li></Link>
+                                <Link to={'/NewsApp'}><li className={styles.categories__link} onClick={(e) => dispatch(GET_CATEGORIES(e.target.textContent.toLowerCase()))}>Politics</li></Link>
+                                <Link to={'/NewsApp'}><li className={styles.categories__link} onClick={(e) => dispatch(GET_CATEGORIES(e.target.textContent.toLowerCase()))}>Science</li></Link>
+                                <Link to={'/NewsApp'}><li className={styles.categories__link} onClick={(e) => dispatch(GET_CATEGORIES(e.target.textContent.toLowerCase()))}>Sports</li></Link>
+                                <Link to={'/NewsApp'}><li className={styles.categories__link} onClick={(e) => dispatch(GET_CATEGORIES(e.target.textContent.toLowerCase()))}>Technology</li></Link>
+                                <Link to={'/NewsApp'}><li className={styles.categories__link} onClick={(e) => dispatch(GET_CATEGORIES(e.target.textContent.toLowerCase()))}>Top</li></Link>
+                                <Link to={'/NewsApp'}><li className={styles.categories__link} onClick={(e) => dispatch(GET_CATEGORIES(e.target.textContent.toLowerCase()))}>World</li></Link>
+                                </ul>
                         </li>
                         <li className={styles.header__link}>Contacts</li>
                         <Link to={'/favourite'}>
