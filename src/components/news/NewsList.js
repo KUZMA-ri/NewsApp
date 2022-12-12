@@ -141,7 +141,7 @@ const NewsList = () => {
                 </div>
                 <div className={styles.news__categories}>
                     {news.category.map((item) => (
-                        <p className={styles.news__categoriesName}>{item}</p>
+                        <p key={item} className={styles.news__categoriesName}>{item}</p>
                     ))}
                 </div>
                 <div className={styles.news__content}>

@@ -15,3 +15,17 @@
 .container {
     padding: 0 15px;
 }
+
+.wrapperFavouriteItems {
+    padding: 15px;
+}
+
+.wrapperFavouriteItems_night {
+    background-color:var(--background-darkGrey);
+    color: var(--text-light);
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}

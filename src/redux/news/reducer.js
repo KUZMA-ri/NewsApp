@@ -15,7 +15,6 @@ const newsReducer = (state = initialState, action) => {
             return {...state, news: [...action.payload]}
         
         case "GET_CATEGORIES":
-            console.log(action.payload);
             return {...state, category: action.payload}
 
         // case "GET_MORE_NEWS":
