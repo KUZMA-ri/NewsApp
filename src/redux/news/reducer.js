@@ -28,7 +28,7 @@ const newsReducer = (state = initialState, action) => {
 
         case 'REMOVE_NEWS_TO_FAVOURITE':
             const filteredFavouritesNews = state.favouriteNews.filter(item => action.payload !== item.title);
-            return { favourite: false, favouriteNews: [...filteredFavouritesNews], news: state.news};
+            return {favourite: false, favouriteNews: [...filteredFavouritesNews], news: state.news};
 
             default:
                 return state;

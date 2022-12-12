@@ -35,6 +35,7 @@ const Favourites = () => {
     if(oneFavNews.length === 0) {
         return (
             <div className={mainClass}>
+                <Search favouriteNews={favouriteNews}/>     
                 <div className={styles.container}>
                     <h1>No favorites</h1>
                 </div>

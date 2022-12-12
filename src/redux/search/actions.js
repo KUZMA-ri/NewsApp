@@ -1,1 +1,1 @@
-export const SEARCH = (news) => ({type: 'SEARCH', payload: news});
+export const SEARCH = (news, favouriteNews) => ({type: 'SEARCH', payload: news, favouriteNews});
