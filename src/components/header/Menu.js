@@ -34,19 +34,19 @@ const Menu = () => {
                         </li>
                         <Link to={'/NewsApp'}><li className={styles.header__link}>Home</li></Link>
                         <li className={styles.header__link} >Categories
-                                <ul className={styles.categories__list} onClick={(e) => dispatch(GET_CATEGORIES(e.target.textContent.toLowerCase()))}>
+                                <ul className={styles.categories__list}>
                                     <Link to={'/NewsApp'}><li className={styles.categories__link} onClick={(e) => dispatch(GET_CATEGORIES(''))}>All</li></Link>    
-                                    <Link to={'/business'}><li className={styles.categories__link} >Business</li></Link>
-                                    <Link to={'/entertainment'}><li className={styles.categories__link} >Entertainment</li></Link>  
-                                    <Link to={'/environment'}><li className={styles.categories__link}>Environment</li></Link>
-                                    <Link to={'/food'}><li className={styles.categories__link} >Food</li></Link>
-                                    <Link to={'/health'}><li className={styles.categories__link} >Health</li></Link>
-                                    <Link to={'/politics'}><li className={styles.categories__link} >Politics</li></Link>
-                                    <Link to={'/science'}><li className={styles.categories__link} >Science</li></Link>
-                                    <Link to={'/sports'}><li className={styles.categories__link}>Sports</li></Link>
-                                    <Link to={'/technology'}><li className={styles.categories__link} >Technology</li></Link>
-                                    <Link to={'/top'}><li className={styles.categories__link} >Top</li></Link>
-                                    <Link to={'/world'}><li className={styles.categories__link} >World</li></Link>
+                                    <Link to={'/business'}><li className={styles.categories__link} onClick={(e) => dispatch(GET_CATEGORIES(e.target.textContent.toLowerCase()))}>Business</li></Link>
+                                    <Link to={'/entertainment'}><li className={styles.categories__link} onClick={(e) => dispatch(GET_CATEGORIES(e.target.textContent.toLowerCase()))}>Entertainment</li></Link>  
+                                    <Link to={'/environment'}><li className={styles.categories__link} onClick={(e) => dispatch(GET_CATEGORIES(e.target.textContent.toLowerCase()))}>Environment</li></Link>
+                                    <Link to={'/food'}><li className={styles.categories__link} onClick={(e) => dispatch(GET_CATEGORIES(e.target.textContent.toLowerCase()))}>Food</li></Link>
+                                    <Link to={'/health'}><li className={styles.categories__link} onClick={(e) => dispatch(GET_CATEGORIES(e.target.textContent.toLowerCase()))}>Health</li></Link>
+                                    <Link to={'/politics'}><li className={styles.categories__link} onClick={(e) => dispatch(GET_CATEGORIES(e.target.textContent.toLowerCase()))}>Politics</li></Link>
+                                    <Link to={'/science'}><li className={styles.categories__link} onClick={(e) => dispatch(GET_CATEGORIES(e.target.textContent.toLowerCase()))}>Science</li></Link>
+                                    <Link to={'/sports'}><li className={styles.categories__link} onClick={(e) => dispatch(GET_CATEGORIES(e.target.textContent.toLowerCase()))}>Sports</li></Link>
+                                    <Link to={'/technology'}><li className={styles.categories__link} onClick={(e) => dispatch(GET_CATEGORIES(e.target.textContent.toLowerCase()))}>Technology</li></Link>
+                                    <Link to={'/top'}><li className={styles.categories__link} onClick={(e) => dispatch(GET_CATEGORIES(e.target.textContent.toLowerCase()))}>Top</li></Link>
+                                    <Link to={'/world'}><li className={styles.categories__link} onClick={(e) => dispatch(GET_CATEGORIES(e.target.textContent.toLowerCase()))}>World</li></Link>
                                 </ul>
                         </li>
                         <Link to='*'><li className={styles.header__link}>Contacts</li></Link>
