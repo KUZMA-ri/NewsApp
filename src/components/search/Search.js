@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { SEARCH } from '../../redux/search/actions';
+import { SEARCH, SEARCH_FAVOURITE} from '../../redux/search/actions';
 import styles from './search.module.css';
 // ---------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -25,9 +25,9 @@ const Search = ({news, favouriteNews}) => {
                 let filterItem = copySearchNews.filter((item) => {
                     return item.title.toLowerCase().includes(inputValue.toLowerCase());
                 });
-                dispatch(SEARCH(filterItem));
+                dispatch(SEARCH_FAVOURITE(filterItem));
             } else {
-                dispatch(SEARCH(null))
+                dispatch(SEARCH_FAVOURITE(null))
             }
         }
     }

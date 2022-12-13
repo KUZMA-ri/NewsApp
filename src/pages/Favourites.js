@@ -14,7 +14,7 @@ const Favourites = () => {
     const dispatch = useDispatch();
     const favouriteNews = useSelector((state) => state.news.favouriteNews);
     const theme = useSelector((state) => state.theme.theme);
-    const search = useSelector(state => state.search.search);
+    const search_favourite = useSelector(state => state.search.search_favourite);
 
     const mainClass = classNames(styles.favourites__main, {     
         [styles.favourites__main_night]: theme === 'dark',     
@@ -28,7 +28,7 @@ const Favourites = () => {
         dispatch(REMOVE_NEWS_TO_FAVOURITE(title));
     }
 
-    const oneFavNews = (search ? search : favouriteNews).map(item => {
+    const oneFavNews = (search_favourite ? search_favourite : favouriteNews).map(item => {
         return <FavouriteItem key={item.title} {...item} onClick={handleClick}/>
     })
 

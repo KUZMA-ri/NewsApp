@@ -145,7 +145,7 @@ const NewsList = () => {
                     ))}
                 </div>
                 <div className={styles.news__content}>
-                <Link className={styles.news__link}  to={`/news/${news.title}`}>
+                <Link className={styles.news__link}  to={`/NewsApp/news/${news.title}`}>
                     <h2 className={titleClass}>{news.title}</h2>
                 </Link>
                 </div>
