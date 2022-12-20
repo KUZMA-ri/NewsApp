@@ -1,4 +1,5 @@
 .main {
+    position: relative;
     background: var(--background-grey);
     background-size: cover;
     background-repeat: no-repeat;
@@ -18,6 +19,12 @@
     color: var(--text-dark);
 }
 
+@media (max-width: 768px) { 
+    .date {
+        font-size: medium;
+    }
+}
+
 .date_night {
     color: var(--text-light);
 }
@@ -29,6 +36,12 @@
     align-items: center;
     padding: 15px;
     background-color: var(--background-grey);
+}
+
+@media (max-width: 768px) { 
+    .search__wrapper {
+        padding: 10px;
+    }
 }
 
 /* ############################################################################################################# */
@@ -52,6 +65,17 @@
     transition: all 0.3s;
     background-color: var(--background-lightGrey);
     box-shadow: 0px 5px 5px 2px rgb(34 60 80 / 10%);
+}
+
+@media (max-width: 768px) { 
+    .news__container {
+        width: calc(100% / 12 * 6 - 15px);
+    }
+}
+@media (max-width: 576px) { 
+    .news__container {
+        width: calc(100% / 12 * 12 - 15px);
+    }
 }
 
 .news__container:hover {
@@ -113,10 +137,22 @@
     text-decoration: underline;
 }
 
+@media (max-width: 768px) { 
+    .news__title {
+        font-size: 1.1rem;
+    }
+}
+
 .news__pubdate {
     color: var(--text-grey);
     font-size: 0.9rem;
     margin-top: auto;
+}
+
+@media (max-width: 768px) { 
+    .news__pubdate {
+        font-size: 0.8rem;
+    }
 }
 
 .news__categories {
@@ -133,6 +169,24 @@
     margin-top: 10px;
     margin-right: 5px;
     text-align: center;
+}
+
+@media (max-width: 768px) { 
+    .news__categoriesName {
+        padding: 4px, 14px;
+        font-size: 15px;
+    }
+}
+
+.pagination__container_night {
+    background-color: #3e5061;
+    color: white;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    padding: 20px 15px;
 }
 
 /* ############################################################################################################# */
@@ -218,3 +272,8 @@
 .accordion {
     margin-bottom: 30px;
 }
+
+.scrollToTop {
+    bottom: 150px;
+}
+

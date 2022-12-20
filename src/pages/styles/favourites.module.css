@@ -19,6 +19,7 @@
 
 .wrapperFavouriteItems {
     padding: 15px;
+    position: relative;
 }
 
 .wrapperFavouriteItems_night {

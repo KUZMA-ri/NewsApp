@@ -8,14 +8,16 @@ import Swal from "sweetalert2";
 import classNames from 'classnames';
 import axios from 'axios';
 
-import Loader from "../loader/Loader";
-import { text } from "../../constants/constants";
+import Loader from "../loader";
+import { text } from "../../constants";
 
 import styles from './news.module.css';
 // ----------------------------------------------------------------------------------------------------------------------------------------------
 
 const API_KEY = 'pub_134488cb6dbb49732c32b30c33864255c0ece';
+// const API_KEY = 'pub_14659f00acb3b613b42577e22f0abf510730b';        // #2
 const API = `https://newsdata.io/api/1/news?apikey=${API_KEY}&language=en`;
+
 
 const NewsItem = () => {
     const [oneNews, setOneNews] = useState();  
@@ -27,7 +29,6 @@ const NewsItem = () => {
             .then((response) => {
                 const oneNews= response.data.results[0]; 
                 setOneNews(oneNews);
-                console.log(oneNews);
             })
     }, [id]);
 

@@ -4,8 +4,9 @@ import Swal from 'sweetalert2';
 import classNames from 'classnames';
 
 import Accordion from 'react-bootstrap/Accordion';
+import ScrollToTop from "react-scroll-to-top";
 
-import { text } from '../../constants/constants';
+import { text } from '../../constants';
 
 import styles from './news.module.css';
 // ---------------------------------------------------------------------------------------------------------------------------------------------
@@ -69,6 +70,7 @@ const FavouriteItem = ({title, content, creator, pubDate, image_url, link, onCli
                             Remove from favourites
                     </button>
                 </div>
+                <ScrollToTop smooth className={styles.scrollToTop}/>
             </div>
     )
 }

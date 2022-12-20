@@ -10,11 +10,18 @@
     padding: 30px 0;
 }
 
+@media (max-width: 768px) { 
+    .footer__icons {
+        padding: 20px 0;
+    }
+}
+
 .footer__list {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    margin-bottom: 0;
 }
 
 .footer__item {
@@ -33,6 +40,12 @@
 
 .footer__icon {
     width: 53px;
+}
+
+@media (max-width: 768px) { 
+    .footer__icon {
+        width: 45px;
+    }
 }
 
 @media screen and (max-width: 560px) {

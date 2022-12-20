@@ -2,9 +2,6 @@ import { Link } from 'react-router-dom';
 
 import Carousel from 'react-bootstrap/Carousel';
 
-import 'bootstrap/dist/css/bootstrap.min.css';
-import styles from './slider.module.css';
-
 import food from '../../images/categories/food.jpg';
 import sport from '../../images/categories/sport.jpg';
 import world from '../../images/categories/world.webp';
@@ -15,6 +12,9 @@ import business from '../../images/categories/business.webp';
 import technology from '../../images/categories/technology.webp';
 import environment from '../../images/categories/environment.webp';
 import entertainment from '../../images/categories/entertainment.jpg';
+
+import 'bootstrap/dist/css/bootstrap.min.css';
+import styles from './slider.module.css';
 // -------------------------------------------------------------------------------------------------------------------------------------------------
 
 function Slider() {

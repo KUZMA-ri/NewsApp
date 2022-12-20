@@ -1,7 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
 import NewsPage from './pages/NewsPage';
-import Menu from './components/header/Menu';
-import Footer from './components/footer/Footer';
+import Menu from './components/header';
+import Footer from './components/footer';
 import NewsList from './components/news/NewsList';
 import NewsItem from './components/news/NewsItem';
 import Favourites from './pages/Favourites';
@@ -11,7 +11,7 @@ const App = () => {
     return(
         <>
             <Menu />
-            <Routes basename="/NewsApp">
+            <Routes >
                 <Route path='/NewsApp' element={<NewsPage />} />
                 <Route path='/NewsApp/business' element={<NewsList />} />
                 <Route path='/NewsApp/entertainment' element={<NewsList />} />

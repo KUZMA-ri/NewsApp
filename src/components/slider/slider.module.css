@@ -36,3 +36,24 @@
     bottom: 32%;
     padding: 45px 0;
 }
+
+/* -------------------- */
+.type {
+    padding: 50px;
+    font-size: 2em;
+}
+
+.type .char{
+    visibility: hidden;
+    animation: animate 0s steps(2) forwards;
+    animation-delay: calc(0.07s * var(--char-index));   
+}
+
+@keyframes animate {
+    0% {
+        visibility: hidden;
+    }
+    100% {
+        visibility: visible;
+    }
+}

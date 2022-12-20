@@ -5,7 +5,7 @@ import classNames from 'classnames';
 import {REMOVE_NEWS_TO_FAVOURITE } from '../redux/news/actions';
 
 import FavouriteItem from '../components/news/FavouriteItem';
-import Search  from '../components/search/Search';
+import Search  from '../components/search';
 
 import styles from './styles/favourites.module.css';
 // ------------------------------------------------------------------------------------------------------------------------------------------
@@ -28,8 +28,8 @@ const Favourites = () => {
         dispatch(REMOVE_NEWS_TO_FAVOURITE(title));
     }
 
-    const oneFavNews = (search_favourite ? search_favourite : favouriteNews).map(item => {
-        return <FavouriteItem key={item.title} {...item} onClick={handleClick}/>
+    const oneFavNews = (search_favourite ? search_favourite : favouriteNews).map((item, index) => {
+        return <FavouriteItem key={item.title ? item.title : index} {...item} onClick={handleClick}/>
     })
 
     if(oneFavNews.length === 0) {

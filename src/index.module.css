@@ -41,3 +41,25 @@ a{
   padding: 0 15px;
 }
 
+/* полоса прокрутки (скроллбар) */
+::-webkit-scrollbar {
+  width: 12px; /* ширина для вертикального скролла */
+  background-color: black;
+}
+
+/* ползунок скроллбара */
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(0deg, rgb(6,6,6), rgb(176, 40, 70), rgb(6, 6, 6));
+  opacity: 0.8;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(0deg, rgb(6,6,6), rgb(176, 40, 70), rgb(6, 6, 6));
+}
+
+  /* @media (max-width: 576px) { }
+@media (max-width: 768px) { }
+@media (max-width: 992px) { }
+@media (max-width: 1200px) { }
+@media (max-width: 1400px) { } */

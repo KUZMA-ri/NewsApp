@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 
 import NewsList from "../components/news/NewsList";
-import Slider from "../components/slider/Slider";
+import Slider from "../components/slider";
 // ---------------------------------------------------------------------------------------------------------------------------------------------
 
 
